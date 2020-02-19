@@ -8,7 +8,8 @@ namespace Jolly.Vigesimal.Benchmark
     {
         static void Main(string[] args)
         {
-            var bm = BenchmarkRunner.Run<VigesimalBenchmark>(new AllowNonOptimized());
+            var bm = BenchmarkRunner.Run<IntBenchmark>();
+            var bm1 = BenchmarkRunner.Run<StringBenchmark>();
             Console.ReadKey();
         }
     }
