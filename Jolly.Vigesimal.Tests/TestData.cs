@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Jolly.Vigesimal.Tests
 {
@@ -12,6 +8,8 @@ namespace Jolly.Vigesimal.Tests
         public IEnumerator<object[]> GetEnumerator()
         {
             yield return new object[] { "1", 1 };
+            yield return new object[] { "12", 22 };
+            yield return new object[] { "1G", 36 };
             yield return new object[] { "22E", 854 };
         }
 

@@ -19,5 +19,17 @@ namespace Jolly.Vigesimal.Benchmark
         {
             var x = new Vigesimal("A2");
         }
+
+        [Benchmark]
+        public void ConstructFromIntBigNumber()
+        {
+            var x = new Vigesimal(854);
+        }
+
+        [Benchmark]
+        public void ConstructFromStringBigNumber()
+        {
+            var x = new Vigesimal("22E");
+        }
     }
 }
