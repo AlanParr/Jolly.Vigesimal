@@ -19,5 +19,12 @@ namespace Jolly.Vigesimal.Tests
             var result = new Vigesimal(vigesimalValue);
             Assert.Equal(intValue, result.IntValue);
         }
+
+        [Fact]
+        public void TestToStringIsCorrect()
+        {
+            var result = new Vigesimal("22E");
+            Assert.Equal("22E", result.ToString());
+        }
     }
 }

@@ -27,14 +27,33 @@ namespace Jolly.Vigesimal.Tests
             var obj1 = new Vigesimal(obj1Value);
             var obj2 = new Vigesimal(obj2Value);
 
-            Assert.False(obj1 == obj2);
+            Assert.True(obj1 != obj2);
         }
 
         [Fact]
         public void NotEqualToNull()
         {
             var obj1 = new Vigesimal(854);
-            Assert.False(obj1 == null);
+            Assert.False(obj1.Equals(null));
+        }
+
+        [Fact]
+        public void HashcodeMatchesIntValueHashcode()
+        {
+            var obj = new Vigesimal(854);
+            Assert.Equal(obj.IntValue, obj.GetHashCode());
+        }
+
+        [Fact]
+        public void NotEqualToObjectOfDifferentType()
+        {
+            var obj1 = new Vigesimal(854);
+            var obj2 = new NotAVigesimal();
+
+            Assert.False(obj1.Equals(obj2));
+        }
+        private class NotAVigesimal{
+
         }
     }
 }
